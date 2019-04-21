@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:c="http://www.springframework.org/schema/c" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+	<!-- <bean id="movie" class="com.suraj.spring.beans.Movie"> <constructor-arg 
+		name="movieName" value="Bahubali" /> <constructor-arg name="song" ref="song" 
+		/> <constructor-arg name="movieNames"> <list> <value>Bhagam-Bhag</value> 
+		<value>Dil</value> <value>Hogi Pyar Ki Jeet</value> </list> </constructor-arg> 
+		</bean> <bean id="song" class="com.suraj.spring.beans.Song" /> -->
+
+	<bean id="movie" class="com.suraj.spring.beans.Movie" c:movieName="Raanjhna"
+		c:song-ref="song" c:movieNames-ref="movieList" />
+	<util:list id="movieList">
+		<value>Lutera</value>
+		<value>Dil</value>
+		<value>Hogi Pyar Ki Jeet</value>
+	</util:list>
+	<bean id="song" class="com.suraj.spring.beans.Song" />
+
+
+</beans>
